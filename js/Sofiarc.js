@@ -49,13 +49,7 @@
     dynamicyearElm.html(currentYear);
   }
 
-  // Date Picker
-  if ($(".sofiarc-datepicker").length) {
-    $(".sofiarc-datepicker").each(function () {
-      $(this).datepicker();
-    });
-  }
-
+ 
   // Popular Causes Progress Bar
   if ($(".count-bar").length) {
     $(".count-bar").appear(
@@ -139,75 +133,7 @@
     });
   }
 
-  if ($(".contact-form-validated").length) {
-    $(".contact-form-validated").validate({
-      // initialize the plugin
-      rules: {
-        name: {
-          required: true
-        },
-        email: {
-          required: true,
-          email: true
-        },
-        message: {
-          required: true
-        },
-        subject: {
-          required: true
-        }
-      },
-      submitHandler: function (form) {
-        // sending value with ajax request
-        $.post(
-          $(form).attr("action"),
-          $(form).serialize(),
-          function (response) {
-            $(form).parent().find(".result").append(response);
-            $(form).find('input[type="text"]').val("");
-            $(form).find('input[type="email"]').val("");
-            $(form).find("textarea").val("");
-          }
-        );
-        return false;
-      }
-    });
-  }
 
-  // mailchimp form
-  if ($(".mc-form").length) {
-    $(".mc-form").each(function () {
-      var Self = $(this);
-      var mcURL = Self.data("url");
-      var mcResp = Self.parent().find(".mc-form__response");
-
-      Self.ajaxChimp({
-        url: mcURL,
-        callback: function (resp) {
-          // appending response
-          mcResp.append(function () {
-            return '<p class="mc-message">' + resp.msg + "</p>";
-          });
-          // making things based on response
-          if (resp.result === "success") {
-            // Do stuff
-            Self.removeClass("errored").addClass("successed");
-            mcResp.removeClass("errored").addClass("successed");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-          if (resp.result === "error") {
-            Self.removeClass("successed").addClass("errored");
-            mcResp.removeClass("successed").addClass("errored");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-        }
-      });
-    });
-  }
 
   if ($(".video-popup").length) {
     $(".video-popup").magnificPopup({
@@ -389,35 +315,7 @@
       });
   }
 
-  //accordion
-  if ($(".sofiarc-accordion").length) {
-    var accordionGrp = $(".sofiarc-accordion");
-    accordionGrp.each(function () {
-      var accordionName = $(this).data("grp-name");
-      var Self = $(this);
-      var accordion = Self.find(".accordion");
-      Self.addClass(accordionName);
-      Self.find(".accordion .accordion-content").hide();
-      Self.find(".accordion.active").find(".accordion-content").show();
-      accordion.each(function () {
-        $(this)
-          .find(".accordion-title")
-          .on("click", function () {
-            if ($(this).parent().hasClass("active") === false) {
-              $(".sofiarc-accordion." + accordionName)
-                .find(".accordion")
-                .removeClass("active");
-              $(".sofiarc-accordion." + accordionName)
-                .find(".accordion")
-                .find(".accordion-content")
-                .slideUp();
-              $(this).parent().addClass("active");
-              $(this).parent().find(".accordion-content").slideDown();
-            }
-          });
-      });
-    });
-  }
+
 
   $(".add").on("click", function () {
     if ($(this).prev().val() < 999) {

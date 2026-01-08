@@ -5700,7 +5700,13 @@ color: #ffffff;
       font-size: 14px;
       outline: none;
     }
+     .contact-form-box input::placeholder{
+      color: #0066a1;
+     }
+ .contact-form-box textarea::placeholder {
+            color: #0066a1;
 
+    }
     .contact-form-box textarea {
       min-height: 120px;
       resize: none;
