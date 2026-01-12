@@ -3694,7 +3694,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .services-section{
  position: relative;
   padding-top: 100px;
-    background-color: var(--sofiarc-primary, #2C51A3);
+    background-color:#5c88a3;
 
 }
 .serviceshead{
@@ -3704,7 +3704,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .services-two {
   position: relative;
   padding-top: 297px;
-  background-color: var(--sofiarc-primary, #2C51A3);
+  background-color: #5c88a3;
 }
 @media (max-width: 767px) {
   .services-two {
@@ -4455,7 +4455,7 @@ color: #ffffff;
   position: relative;
   padding: 18px 24px 15px;
   border-radius: 20px 20px 0px 0px;
-  background-color: var(--sofiarc-base, #33C1ED);
+  background-color: #0066a1;
   overflow: hidden;
   z-index: 1;
 }
@@ -4647,18 +4647,7 @@ color: #ffffff;
   background-color: var(--sofiarc-base, #33C1ED);
   border-radius: 0px 0px 30px 30px;
 }
-.funfact-one--home2 .funfact-one__inner::after {
-  content: "";
-  width: calc(100% - 50px);
-  height: 100%;
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: RGBA(var(--sofiarc-base-rgb, 51, 193, 237), 0.2);
-  border-radius: inherit;
-  z-index: -1;
-}
+
 .funfact-one--home2 .funfact-one__inner__bg {
   position: absolute;
   top: 0;
